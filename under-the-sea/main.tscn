@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://4enrmoj1sy2n" path="res://blackNoseShark.glb" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 1
+background_color = Color(0.3764706, 0.36862746, 0.7607843, 1)
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_0xm2m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")
+
+[node name="blackNoseShark" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-0.009634032, 0, -0.99995357, 0, 1, 0, 0.99995357, 0, -0.009634032, -1.6598935, -0.41229892, -4.9196663)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+fov = 128.29054
