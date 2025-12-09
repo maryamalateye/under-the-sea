@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4enrmoj1sy2n"
-path="res://.godot/imported/blackNoseShark.glb-7a6c00753ea0da48fb1587eea8870b4c.scn"
+uid="uid://qlhpwj3tgk2k"
+path="res://.godot/imported/bosemansRainbowFish.glb-3b46c50a48372276168df2564c09f062.scn"
 
 [deps]
 
-source_file="res://blackNoseShark.glb"
-dest_files=["res://.godot/imported/blackNoseShark.glb-7a6c00753ea0da48fb1587eea8870b4c.scn"]
+source_file="res://bosemansRainbowFish.glb"
+dest_files=["res://.godot/imported/bosemansRainbowFish.glb-3b46c50a48372276168df2564c09f062.scn"]
 
 [params]
 
-nodes/root_type="MeshInstance3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

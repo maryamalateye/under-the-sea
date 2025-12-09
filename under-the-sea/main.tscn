@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=11 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://4enrmoj1sy2n" path="res://blackNoseShark.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://74qv0hl56n78" path="res://blacknose_shark.tscn" id="5_5vw27"]
+[ext_resource type="PackedScene" path="res://pollan.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bg1k3ie35q6vu" path="res://bosemanRainbow.tscn" id="7_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,12 +28,34 @@ script = ExtResource("1_0xm2m")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1bvp3")
 
-[node name="blackNoseShark" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(-0.009634032, 0, -0.99995357, 0, 1, 0, 0.99995357, 0, -0.009634032, -1.6598935, -0.41229892, -4.9196663)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 fov = 128.29054
+
+[node name="leftHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/leftHand" instance=ExtResource("2_lquwl")]
+
+[node name="FunctionPickup" parent="XROrigin3D/leftHand" instance=ExtResource("3_7mycd")]
+
+[node name="rightHand" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/rightHand" instance=ExtResource("4_272bh")]
+
+[node name="FunctionPickup" parent="XROrigin3D/rightHand" instance=ExtResource("3_7mycd")]
+
+[node name="blacknoseShark" parent="." instance=ExtResource("5_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7972738, 1.7339765, -2.915856)
+gravity_scale = 0.0
+
+[node name="pollan" parent="." instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4551072, -0.08194792, -0.01747942)
+gravity_scale = 0.0
+
+[node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
+gravity_scale = 0.0
