@@ -1,22 +1,63 @@
-[gd_scene load_steps=6 format=3 uid="uid://74qv0hl56n78"]
+[gd_scene load_steps=10 format=3 uid="uid://74qv0hl56n78"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_vgaix"]
 [ext_resource type="PackedScene" uid="uid://4enrmoj1sy2n" path="res://blackNoseShark.glb" id="2_by60x"]
+[ext_resource type="Script" uid="uid://dh4524n506qum" path="res://blacknose_shark.gd" id="2_yn0gu"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_yn0gu"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_m7qw7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mnqs8"]
+radius = 0.7
+height = 4.614
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_by60x"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+inherit_velocity_ratio = 0.5
+gravity = Vector3(0, 0.5, -2)
+scale_min = 0.08
+scale_max = 0.25
+color = Color(1, 0, 0.13725491, 1)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_by60x"]
+albedo_color = Color(0.3372549, 0.94509804, 0.9607843, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yn0gu"]
+material = SubResource("StandardMaterial3D_by60x")
 
 [node name="blacknoseShark" instance=ExtResource("1_vgaix")]
+script = ExtResource("2_yn0gu")
+orbit_radius = 3.0
+orbit_speed = 0.3
+swim_speed = 0.8
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, -1.2, 0, 1.2, -5.2453668e-08, 0, 0, 0.4902283)
+transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, -1.2, 0, 1.2, -5.2453668e-08, 0, 0, -0.3842498)
 shape = SubResource("CapsuleShape3D_mnqs8")
 
-[node name="blackNoseShark" parent="." index="1" instance=ExtResource("2_by60x")]
-
-[node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("3_yn0gu")]
+[node name="GrabPointHandRight" parent="." index="1" instance=ExtResource("3_yn0gu")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.30496523, 0.5693751, 0.30208567)
 
-[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource("4_m7qw7")]
+[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("4_m7qw7")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.017004907, 0.57442486, 0.31230307)
+script = null
+
+[node name="fishCentre" type="Node3D" parent="." index="3"]
+
+[node name="Bubbles" type="GPUParticles3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1760984, -2.154235)
+emitting = false
+amount = 4
+lifetime = 2.0
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_by60x")
+draw_pass_1 = SubResource("SphereMesh_yn0gu")
+
+[node name="SharkRig" type="Node3D" parent="." index="5"]
+
+[node name="blackNoseShark" parent="SharkRig" index="0" instance=ExtResource("2_by60x")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+skeleton = NodePath("../..")

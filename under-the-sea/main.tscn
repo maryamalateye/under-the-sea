@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://74qv0hl56n78" path="res://blacknose_shark.tscn" id="5_5vw27"]
-[ext_resource type="PackedScene" path="res://pollan.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cbarksd5res18" path="res://pollan.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bg1k3ie35q6vu" path="res://bosemanRainbow.tscn" id="7_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
@@ -33,6 +33,7 @@ environment = SubResource("Environment_1bvp3")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(0.5690212, 0, 0.82232285, -0.00021528361, 0.99999994, 0.0001489694, -0.8223228, -0.00026179937, 0.56902117, 0, 0, 0)
 fov = 128.29054
 
 [node name="leftHand" type="XRController3D" parent="XROrigin3D"]
@@ -50,12 +51,13 @@ tracker = &"right_hand"
 [node name="FunctionPickup" parent="XROrigin3D/rightHand" instance=ExtResource("3_7mycd")]
 
 [node name="blacknoseShark" parent="." instance=ExtResource("5_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7972738, 1.7339765, -2.915856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5211312, 1.6291898, -2.1795082)
 gravity_scale = 0.0
 
 [node name="pollan" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4551072, -0.08194792, -0.01747942)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4551072, -0.08194792, 3.7187104)
 gravity_scale = 0.0
 
 [node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31676173, -0.07241869, 1.8531744)
 gravity_scale = 0.0
