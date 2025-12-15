@@ -28,6 +28,8 @@ func _process(delta):
 
 func _on_picked_up(_p):
 	_swimming = false
+	#signal to label to print info for this
 
 func _on_dropped(_p):
 	_swimming = true
+	#signal to label to reset label (go back to original)
