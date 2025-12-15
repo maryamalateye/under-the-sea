@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=13 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://bho3nroe818si" path="res://fishInfo.tscn" id="4_4c57u"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://74qv0hl56n78" path="res://blacknose_shark.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cbarksd5res18" path="res://pollan.tscn" id="6_7mycd"]
@@ -17,7 +19,7 @@ sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
 
 [sub_resource type="Environment" id="Environment_1bvp3"]
 background_mode = 1
-background_color = Color(0.3764706, 0.36862746, 0.7607843, 1)
+background_color = Color(0.08235294, 0.3529412, 0.5764706, 1)
 sky = SubResource("Sky_h2yge")
 tonemap_mode = 2
 glow_enabled = true
@@ -34,12 +36,21 @@ environment = SubResource("Environment_1bvp3")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(0.5690212, 0, 0.82232285, -0.00021528361, 0.99999994, 0.0001489694, -0.8223228, -0.00026179937, 0.56902117, 0, 0, 0)
+visible = false
 fov = 128.29054
 
 [node name="leftHand" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/leftHand" instance=ExtResource("2_lquwl")]
+
+[node name="Viewport2Din3D" parent="XROrigin3D/leftHand/LeftHand" instance=ExtResource("3_kek77")]
+transform = Transform3D(-2.0701707e-08, -0.153, -1.5055162e-08, -0.016908158, -5.8288185e-10, 1.1396468, -0.19326179, 1.6439964e-08, -0.09970584, -0.03, 0, 0.37668264)
+scene = ExtResource("4_4c57u")
+viewport_size = Vector2(500, 250)
+transparent = 1
+unshaded = true
+scene_properties_keys = PackedStringArray()
 
 [node name="FunctionPickup" parent="XROrigin3D/leftHand" instance=ExtResource("3_7mycd")]
 
@@ -55,9 +66,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5211312, 1.6291898, -2.179
 gravity_scale = 0.0
 
 [node name="pollan" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4551072, -0.08194792, 3.7187104)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.295521, -0.08194792, 2.063515)
 gravity_scale = 0.0
 
 [node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31676173, -0.07241869, 1.8531744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8177695, -0.07241869, 1.354717)
 gravity_scale = 0.0
