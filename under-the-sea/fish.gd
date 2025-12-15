@@ -1,7 +1,9 @@
 extends XRToolsPickable
 
-@onready var rig := $SharkRig
+@onready var rig := $Mesh
 
+@export var fish_name: String = "fish"
+@export_multiline var fish_info_text: String = ""
 @export var orbit_radius: float = 10.0
 @export var orbit_speed: float = 0.08   #turning speed
 @export var swim_speed: float = 0.8    #actual swimming speed
@@ -11,6 +13,10 @@ var home_position: Vector3
 
 func _ready():
 	super()
+	
+	#add fish to fish group
+	add_to_group("fish")
+	
 	picked_up.connect(_on_picked_up)
 	dropped.connect(_on_dropped)
 
@@ -24,7 +30,7 @@ func _process(delta):
 	rig.translate(Vector3.FORWARD * swim_speed * delta)
 
 	var to_home = rig.global_position - home_position
-	var dist = to_home.length()
+	#var dist = to_home.length()
 
 func _on_picked_up(_p):
 	_swimming = false

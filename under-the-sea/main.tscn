@@ -64,10 +64,12 @@ tracker = &"right_hand"
 [node name="blacknoseShark" parent="." instance=ExtResource("5_5vw27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5211312, 1.6291898, -2.1795082)
 gravity_scale = 0.0
+fish_name = "fish"
 
 [node name="pollan" parent="." instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.295521, -0.08194792, 2.063515)
 gravity_scale = 0.0
+fish_name = "Pollan"
 
 [node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8177695, -0.07241869, 1.354717)

@@ -27,14 +27,21 @@ func _ready():
 		return
 	
 	label = label_root.get_node("MarginContainer/VBoxContainer/Label")
+
 	#connecting signals to being picked up
-	shark.picked_up.connect(_on_picked_up)
-	shark.dropped.connect(_on_dropped)
+	for fish in get_tree().get_nodes_in_group("fish"):
+		fish.picked_up.connect(_on_picked_up)
+		fish.dropped.connect(_on_dropped)
+	
+	
+	#shark.picked_up.connect(_on_picked_up)
+	#shark.dropped.connect(_on_dropped)
 
-func _on_picked_up(_p):
+func _on_picked_up(fish):
+	print("Picked fish:", fish.fish_name, "text: ", fish.fish_info_text)
 	if label:
-		label.text = "You picked up the shark"
+		label.text = fish.fish_info_text
 
-func _on_dropped(_p):
+func _on_dropped(_fish):
 	if label:
 		label.text = "Welcome to under the sea!"
