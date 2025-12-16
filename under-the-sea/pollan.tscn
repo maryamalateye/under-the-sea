@@ -8,8 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://dcxcr1kh3u5nq" path="res://sounds/bubbles.mp3" id="6_qp6ei"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_urhcf"]
-radius = 0.7
-height = 3.0
+radius = 1.195
+height = 4.355
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mmgcy"]
 emission_shape_scale = Vector3(0.5, 0.5, 0.5)
@@ -30,8 +30,9 @@ albedo_color = Color(0.3372549, 0.94509804, 0.9607843, 1)
 material = SubResource("StandardMaterial3D_yn0gu")
 
 [node name="pollan" instance=ExtResource("1_vat32")]
+gravity_scale = 0.0
 script = ExtResource("2_0p1hq")
-fish_name = "fish"
+fish_name = "Pollan"
 fish_info_text = "The pollan is a freshwater whitefish that lives only in five lakes in Ireland. The pollan population in Lough Neagh in Northern Ireland is where it is most abundant and is used for commercial fishing. 
 Pollan is classified as vulnerable in Ireland, threatened by climate change, pollution, and predators. "
 orbit_speed = 0.08
@@ -40,6 +41,7 @@ swim_speed = 0.8
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1.3, 0, 0, 0, -5.6824803e-08, -1.3, 0, 1.3, -5.6824803e-08, -0.9118216, -0.29468286, -0.31225514)
 shape = SubResource("CapsuleShape3D_urhcf")
+debug_color = Color(0.5750086, 0.5544387, 1.92523e-07, 0.41960785)
 
 [node name="Mesh" type="Node3D" parent="." index="1"]
 
@@ -55,6 +57,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.11
 
 [node name="Bubbles" type="GPUParticles3D" parent="Mesh/pollan" index="4"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.7421582e-08, -0.40201718, -0.42805302)
+emitting = false
 amount = 4
 lifetime = 2.0
 speed_scale = 0.5
@@ -63,6 +66,7 @@ draw_pass_1 = SubResource("SphereMesh_ia1bg")
 
 [node name="Bubbles2" type="GPUParticles3D" parent="Mesh/pollan" index="5"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.7421582e-08, -0.6977296, -0.42805302)
+emitting = false
 amount = 4
 lifetime = 2.0
 speed_scale = 0.5

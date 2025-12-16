@@ -1,6 +1,6 @@
 extends XRToolsPickable
 
-@onready var rig := $Mesh
+@onready var rig := self
 
 @export var fish_name: String = "fish"
 @export_multiline var fish_info_text: String = ""

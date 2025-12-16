@@ -32,7 +32,6 @@ func _ready():
 		fish.dropped.connect(_on_dropped)
 
 func _on_picked_up(fish):
-	print("Picked fish:", fish.fish_name, "text: ", fish.fish_info_text)
 	if label:
 		label.text = fish.fish_info_text
 

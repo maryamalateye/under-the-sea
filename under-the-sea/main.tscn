@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=14 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_lquwl"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://74qv0hl56n78" path="res://blacknose_shark.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cbarksd5res18" path="res://pollan.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bg1k3ie35q6vu" path="res://bosemanRainbow.tscn" id="7_272bh"]
+[ext_resource type="Script" uid="uid://c0sc5bttli8t4" path="res://spawner.gd" id="10_4c57u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -62,29 +63,10 @@ tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/rightHand" instance=ExtResource("3_7mycd")]
 
-[node name="blacknoseShark" parent="." instance=ExtResource("5_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5211312, 1.6291898, -2.1795082)
-gravity_scale = 0.0
-fish_name = "fish"
-orbit_speed = 0.08
-swim_speed = 0.8
-enabled = true
-press_to_hold = true
-picked_up_layer = 65536
-release_mode = -1
-ranged_grab_method = 1
-second_hand_grab = 0
-ranged_grab_speed = 20.0
-picked_by_exclude = ""
-picked_by_require = ""
-
-[node name="pollan" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.295521, -0.08194792, 2.063515)
-gravity_scale = 0.0
-fish_name = "Pollan"
-
-[node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8177695, -0.07241869, 1.354717)
-gravity_scale = 0.0
-
 [node name="SteamAudioConfig" type="SteamAudioConfig" parent="."]
+
+[node name="spawner" type="Node3D" parent="."]
+script = ExtResource("10_4c57u")
+fish_scene1 = ExtResource("5_5vw27")
+fish_scene2 = ExtResource("7_272bh")
+fish_scene3 = ExtResource("6_7mycd")
