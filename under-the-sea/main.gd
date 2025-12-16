@@ -1,8 +1,6 @@
 extends Node3D
 var xr_interface: XRInterface
-#@onready var environment:Environment = $"../WorldEnvironment".environment
 
-@onready var shark = $blacknoseShark
 @onready var tempVP = $XROrigin3D/leftHand/LeftHand/Viewport2Din3D
 
 var label = Label
@@ -32,10 +30,6 @@ func _ready():
 	for fish in get_tree().get_nodes_in_group("fish"):
 		fish.picked_up.connect(_on_picked_up)
 		fish.dropped.connect(_on_dropped)
-	
-	
-	#shark.picked_up.connect(_on_picked_up)
-	#shark.dropped.connect(_on_dropped)
 
 func _on_picked_up(fish):
 	print("Picked fish:", fish.fish_name, "text: ", fish.fish_info_text)
