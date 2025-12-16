@@ -1,8 +1,10 @@
 extends Node3D
 
-@export var fish_scene1: PackedScene
-@export var fish_scene2: PackedScene
-@export var fish_scene3: PackedScene
+@export var fish_scene1: PackedScene	#blacknose shark
+@export var fish_scene2: PackedScene	#boseman's rainbow
+@export var fish_scene3: PackedScene	#pollan
+@export var fish_scene4: PackedScene	#great white
+@export var fish_scene5: PackedScene	#goldfish
 
 @export var kill_fish: float = 10.0
 
@@ -10,8 +12,10 @@ var fishes: Array = []
 
 func _ready() -> void:
 	spawn_fish(fish_scene1, 3)
-	spawn_fish(fish_scene2, 2)
-	spawn_fish(fish_scene3, 3)
+	spawn_fish(fish_scene2, 8)
+	spawn_fish(fish_scene3, 12)
+	spawn_fish(fish_scene4, 2)
+	spawn_fish(fish_scene5, 6)
 
 	var timer = Timer.new()
 	timer.wait_time = kill_fish

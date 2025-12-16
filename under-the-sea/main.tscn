@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=17 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_lquwl"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cbarksd5res18" path="res://pollan.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bg1k3ie35q6vu" path="res://bosemanRainbow.tscn" id="7_272bh"]
 [ext_resource type="Script" uid="uid://c0sc5bttli8t4" path="res://spawner.gd" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://i6sfmn64svo0" path="res://oceanFloor.glb" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://cbvhw1v4fo6j0" path="res://greatWhiteShark.tscn" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://p8opu4tf2gbm" path="res://goldfish.tscn" id="12_w48qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -70,6 +73,29 @@ script = ExtResource("10_4c57u")
 fish_scene1 = ExtResource("5_5vw27")
 fish_scene2 = ExtResource("7_272bh")
 fish_scene3 = ExtResource("6_7mycd")
+fish_scene4 = ExtResource("11_ycdy4")
+fish_scene5 = ExtResource("12_w48qg")
 
-[node name="bosemanRainbow" parent="." instance=ExtResource("7_272bh")]
-transform = Transform3D(0.2854207, 0, 0.95840234, 0, 1, 0, -0.95840234, 0, 0.2854207, -0.37606025, 0, -2.5296178)
+[node name="oceanFloor" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.2982683, 2.603531)
+
+[node name="oceanFloor2" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.398817, -23.142832)
+
+[node name="oceanFloor3" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.2982683, 52.092712)
+
+[node name="oceanFloor4" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.398817, 26.34635)
+
+[node name="oceanFloor5" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.228289, -4.2982683, 6.8198967)
+
+[node name="oceanFloor6" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.228289, -5.398817, -18.926466)
+
+[node name="oceanFloor7" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.780617, -4.2982683, 58.09761)
+
+[node name="oceanFloor8" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.780617, -5.398817, 32.35125)
