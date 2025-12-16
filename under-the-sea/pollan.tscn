@@ -32,7 +32,8 @@ material = SubResource("StandardMaterial3D_yn0gu")
 [node name="pollan" instance=ExtResource("1_vat32")]
 script = ExtResource("2_0p1hq")
 fish_name = "fish"
-fish_info_text = "This is pollan. It's pretty cool and lives in NI!"
+fish_info_text = "The pollan is a freshwater whitefish that lives only in five lakes in Ireland. The pollan population in Lough Neagh in Northern Ireland is where it is most abundant and is used for commercial fishing. 
+Pollan is classified as vulnerable in Ireland, threatened by climate change, pollution, and predators. "
 orbit_speed = 0.08
 swim_speed = 0.8
 

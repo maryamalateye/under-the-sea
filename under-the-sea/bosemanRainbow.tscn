@@ -32,7 +32,8 @@ material = SubResource("StandardMaterial3D_by60x")
 [node name="bosemanRainbow" instance=ExtResource("1_jsjpt")]
 script = ExtResource("2_28xn6")
 fish_name = "Boseman Rainbow Fish"
-fish_info_text = "These fish look like rainbows, that's so cool!"
+fish_info_text = "Boseman's rainbowfish live only in an area of three lakes called Ayamaru in Indonesia. These beautiful fish are popular for keeping in aquariums. They are friendly and peaceful, preferring to be in groups. 
+Boseman's Rainbowfish is on the IUCN Red List as endangered as a result of environmental degradation and excessive collection to sell to hobbyists."
 orbit_speed = 0.5
 swim_speed = 5.0
 
