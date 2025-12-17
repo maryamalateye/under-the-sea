@@ -1,7 +1,9 @@
 # Under the sea
-Name: Maryam Al-Ateye\n
+Name: Maryam Al-Ateye
+
 Student Number: D21124256
-Video : [![YouTube](https://youtu.be/wtLeYXJtgoc)]
+
+Video : [YouTube](https://youtu.be/wtLeYXJtgoc)
 
 # Description
 Under the sea is a VR game that immerses the user in an ocean environment. In the game, the user stands on the sea floor and is surrounded by multiple different types of fish swimming around them. The user can learn more about each fish by grabbing it and reading the information about it on the viewport attached to their left arm. 
