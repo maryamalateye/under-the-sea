@@ -2,6 +2,7 @@ extends Node3D
 var xr_interface: XRInterface
 
 @onready var tempVP = $XROrigin3D/leftHand/LeftHand/Viewport2Din3D
+@onready var spawner = $spawner
 
 var label = Label
 
@@ -30,6 +31,8 @@ func _ready():
 	for fish in get_tree().get_nodes_in_group("fish"):
 		fish.picked_up.connect(_on_picked_up)
 		fish.dropped.connect(_on_dropped)
+	
+	spawner.all_fish_dead.connect(_on_all_fish_dead)
 
 func _on_picked_up(fish):
 	if label:
@@ -38,3 +41,7 @@ func _on_picked_up(fish):
 func _on_dropped(_fish):
 	if label:
 		label.text = "Welcome to under the sea!"
+	
+func _on_all_fish_dead():
+	if label:
+		label.text = "This is the future of our oceans if we do not take action today."

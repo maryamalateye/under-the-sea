@@ -35,11 +35,12 @@ script = ExtResource("2_28xn6")
 fish_name = "Boseman Rainbow Fish"
 fish_info_text = "Boseman's rainbowfish live only in an area of three lakes called Ayamaru in Indonesia. These beautiful fish are popular for keeping in aquariums. They are friendly and peaceful, preferring to be in groups. 
 Boseman's Rainbowfish is on the IUCN Red List as endangered as a result of environmental degradation and excessive collection to sell to hobbyists."
-orbit_speed = 0.08
-swim_speed = 0.8
+orbit_speed = 0.3
+swim_speed = 2.5
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1.2, 0, 0, 0, -5.2453668e-08, -1.2, 0, 1.2, -5.2453668e-08, 0, 0, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_dl1af")
 debug_color = Color(0.9376377, 0.093580164, 0.5766586, 0.41960785)
 

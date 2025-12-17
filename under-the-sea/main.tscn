@@ -38,7 +38,7 @@ environment = SubResource("Environment_1bvp3")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" groups=["xr_camera"]]
 transform = Transform3D(0.5690212, 0, 0.82232285, -0.00021528361, 0.99999994, 0.0001489694, -0.8223228, -0.00026179937, 0.56902117, 0, 0, 0)
 fov = 128.29054
 

@@ -31,14 +31,15 @@ material = SubResource("StandardMaterial3D_yn0gu")
 
 [node name="greatWhiteShark" instance=ExtResource("1_t3tp6")]
 script = ExtResource("2_kjc14")
-fish_name = "fish"
-fish_info_text = "The great white shark is super cool! It is the largest predatory fish to exist, with its teeth being 2.5 inches long. 
+fish_name = "Great White Shark"
+fish_info_text = "The great white shark is super cool! It is the largest predatory fish to exist, with its teeth being 2.5 inches long. These sharks are one of the most well known, being featured in the movie franchise Jaws. Differently to what the movies may have viewers believe, though, they do not often attack humans.
 The IUCN lists them as vulnerable to extinction with their numbers decreasing. "
 orbit_speed = 0.08
 swim_speed = 0.8
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.12948352, 0, 0.75561756)
+visible = false
 shape = SubResource("CapsuleShape3D_t3tp6")
 
 [node name="Mesh" type="Node3D" parent="." index="1"]

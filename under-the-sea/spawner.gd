@@ -1,12 +1,14 @@
 extends Node3D
 
+signal all_fish_dead
+
 @export var fish_scene1: PackedScene	#blacknose shark
 @export var fish_scene2: PackedScene	#boseman's rainbow
 @export var fish_scene3: PackedScene	#pollan
 @export var fish_scene4: PackedScene	#great white
 @export var fish_scene5: PackedScene	#goldfish
 
-@export var kill_fish: float = 10.0
+@export var kill_fish: float = 20.0
 
 var fishes: Array = []
 
@@ -32,6 +34,7 @@ func spawn_fish(fish_scene: PackedScene, amount: int):
 		
 func _on_kill():
 	if fishes.is_empty():
+		all_fish_dead.emit()
 		return
 	
 	var fish = fishes.pick_random()

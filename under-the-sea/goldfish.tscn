@@ -31,13 +31,14 @@ material = SubResource("StandardMaterial3D_yn0gu")
 
 [node name="goldfish" instance=ExtResource("1_urd28")]
 script = ExtResource("2_uli12")
-fish_name = "fish"
-fish_info_text = ""
-orbit_speed = 0.08
-swim_speed = 0.8
+fish_name = "Goldfish"
+fish_info_text = "The goldfish is one of the most popular fish to be kept as a pet. Goldfish are native to China and were bred for their beautiful colours. They are also smart and can distinguish between different humans! That means a pet goldfish can reoognize its owner and tell them apart from other members of the household!"
+orbit_speed = 0.1
+swim_speed = 1.2
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_r12q7")
 
 [node name="Mesh" type="Node3D" parent="." index="1"]
