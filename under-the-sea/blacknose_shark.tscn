@@ -33,8 +33,8 @@ material = SubResource("StandardMaterial3D_yn0gu")
 gravity_scale = 0.0
 script = ExtResource("2_yn0gu")
 fish_name = "Blacknose shark"
-fish_info_text = "Blacknose sharks are a species of requiem shark found through the western Atlantic Ocean. They get their name from the black spots on their noses.
-Overfishing is a threat to this shark, as it is a game fish captured by anglers for sport. Across the coasts of Brazil, Florida, and Venezuela, its meat is popular and sold dried and salted. Juvenile sharks often get caught as bycatch by shrimp trawlers, which poses a significant threat to the overall population. All these factors combined led the IUCN to classify this shark as “Endangered” or “EN”."
+fish_info_text = "Blacknose sharks are found through the western Atlantic Ocean. They get their name from the black spots on their noses.
+Overfishing is a threat to this shark, as it is a game fish captured by anglers for sport. Juvenile sharks often get caught as bycatch by shrimp trawlers, which poses a significant threat to the overall population. All these factors combined led the IUCN to classify this shark as “Endangered” or “EN”."
 orbit_speed = 0.08
 swim_speed = 0.8
 max_distance = 2.5

@@ -8,16 +8,16 @@ signal all_fish_dead
 @export var fish_scene4: PackedScene	#great white
 @export var fish_scene5: PackedScene	#goldfish
 
-@export var kill_fish: float = 20.0
+@export var kill_fish: float = 10.0
 
 var fishes: Array = []
 
 func _ready() -> void:
 	spawn_fish(fish_scene1, 3)
-	spawn_fish(fish_scene2, 8)
-	spawn_fish(fish_scene3, 12)
+	spawn_fish(fish_scene2, 4)
+	spawn_fish(fish_scene3, 5)
 	spawn_fish(fish_scene4, 2)
-	spawn_fish(fish_scene5, 6)
+	spawn_fish(fish_scene5, 4)
 
 	var timer = Timer.new()
 	timer.wait_time = kill_fish
